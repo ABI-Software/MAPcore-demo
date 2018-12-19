@@ -40,14 +40,13 @@
 			}
 			.Row
 			{
-			    display: table;
+			    display: grid;
 			    width: 100%; /*Optional*/
-			    table-layout: fixed; /*Optional*/
 			    border-spacing: 10px; /*Optional*/
+			    grid-template-columns: auto auto auto;
 			}
 			.Column
 			{
-			    display: table-cell;
 			    transition: transform .2s;
 			    background: rgba(1,1,1,0.5);
 			}
@@ -57,12 +56,24 @@
 			    background: rgba(0.1,0.1,0.5,0.8);
 			}
 			
+			@media only screen and (max-width: 800px) {
+  			.Row {
+    			grid-template-columns: auto auto;
+  			}
+			}
+			
+			@media only screen and (max-width: 600px) {
+  			.Row {
+    			grid-template-columns: auto;
+  			}
+			}
+			
 		</style>
 	</head>
 
 	<body  style="height:100%;">
 		<div class="bg">
-			<div style="z-index:100;text-align: center;position: absolute;background: rgba(1,1,1,0.5);">
+			<div style="width:100%;z-index:100;text-align: center;position: absolute;background: rgba(1,1,1,0.5);">
 					<h1 style="text-align:center;left:10%;width:80%;position:relative;">MAPcore 2018 Datathon Demos</h1>
 				<div class="Row">
 					<div class="Column">
@@ -70,7 +81,7 @@
 						<a title="Integrated MAPcore Portal" href="./portal/"><img style="max-width: 80%;height:auto;"src="img/2018-datathon-portal.jpg" alt="Loading Portal image"></a>
 						<h5 style="text-align: center; left:5%;width:90%;position:relative;">
 						This is the MAPcore portal where you can took at different models. You can also create new dialogs and view multiple models at the same time.</h5>
-						</div>
+					</div>
 					<div class="Column">
 						<h4 style="text-align:center;left:5%;width:90%;position:relative;">Online ScaffoldMaker and Fiducial Marker Tool</h4>
 						<a title="ScaffoldMaker and Fiducial Marker" href="./portal/scaffold/"><img style="max-width: 80%;height:auto;"src="img/2018-datathon-scaffold.jpg" alt="Loading Portal image"></a>
@@ -81,8 +92,7 @@
 						<a title="Flatmap Viewer" href="./portal/flatmap.html"><img style="max-width: 80%;height:auto;"src="img/2018-datathon-flatmaps.jpg" alt="Loading Portal image"></a>
 						<h5 style="text-align: center; left:5%;width:90%;position:relative;">Early stage prototype demonstrating the linkage between 2-dimensional flatmaps and 3-dimensional organ scaffolds.</h5>
 					</div>
-				</div>
-				<div class="Row">
+
 					<div class="Column">
 						<h4 style="text-align:center;left:5%;width:90%;position:relative;">Blackfynn Exporter</h4>
 						<a title="Blackfynn Exporter" href="./blackfynn_exporter/"><img style="max-width: 80%;height:auto;"src="img/blackfynn_export.jpg" alt="Loading Portal image"></a>
@@ -98,8 +108,7 @@
 						<a title="ECG Data Mapping" href="./ecg_data/"><img style="max-width: 80%;height:auto;"src="img/ecg_data_mapping.jpg" alt="Loading Portal image"></a>
 						<h5 style="text-align: center; left:5%;width:90%;position:relative;">Map ECG data recorded from electrode arrays onto a fitted 3D model of the heart. (Data provided by Professor Jeff Ardell, UCLA)</h5>
 					</div>
-				</div>
-				<div class="Row">
+
 					<div class="Column">
 						<h4 style="text-align:center;left:5%;width:90%;position:relative;">Integrated ApiNATOMY and Portal App</h4>
 						<a title="ApiNATOMY and Portal" href="./apinatomy/"><img style="max-width: 80%;height:auto;"src="img/apinatomy.jpg" alt="Loading Apinatomy"></a>
